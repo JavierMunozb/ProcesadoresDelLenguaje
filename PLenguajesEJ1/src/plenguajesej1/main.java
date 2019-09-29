@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package plenguajesej1;
+import java.util.Scanner;
 
 /**
  *
@@ -19,7 +20,10 @@ public class main
     {
         // TODO code application logic here
         MaquinaDeEstados mde = new MaquinaDeEstados();
-        if(mde.comprobarCadena("abcdedede"))
+        Scanner input = new Scanner(System.in);
+        System.out.println("Introduzca la cadena a comprobar");
+        String cadena = input.next();
+        if(mde.comprobarCadena(cadena))
         {
             System.out.println("La cadena es válida");
         }
