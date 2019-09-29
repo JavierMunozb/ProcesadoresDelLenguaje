@@ -47,20 +47,24 @@ public class MaquinaDeEstados
     {
         this.inicializar();
         boolean resultado = false;
+        boolean cierreForzado = false; 
         for(char caracter : cadena.toCharArray())
         {
             try
             {
+                System.out.println("Estoy comprobando "+caracter);
                 this.comprobarCaracter(caracter);
+                System.out.println("Estado tras comprobar  "+caracter+" es "+estadoActual);
             }
             catch(Exception e)
             {
                 resultado = false;
+                cierreForzado = true;
                 System.out.println(e.getMessage());
                 break;
             }
         }
-        if(this.isFinal())
+        if(this.isFinal()&&!cierreForzado)
         {
             resultado = true;
         }

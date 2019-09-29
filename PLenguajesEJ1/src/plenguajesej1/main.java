@@ -19,7 +19,7 @@ public class main
     {
         // TODO code application logic here
         MaquinaDeEstados mde = new MaquinaDeEstados();
-        if(mde.comprobarCadena("abc"))
+        if(mde.comprobarCadena("abcdedede"))
         {
             System.out.println("La cadena es válida");
         }
