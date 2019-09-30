@@ -6,10 +6,6 @@
 package plenguajesej1;
 
 import java.io.FileWriter;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 /**
  *
  * @author Javier Muñoz
@@ -18,7 +14,6 @@ public class MaquinaDeEstados
 {
     private Integer estadoActual;
     private AFD automata;
-    private DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
     private String rutaDestino = "C:\\Users\\PcCom\\Documents\\GitHub\\ProcesadoresDelLenguaje\\resultadoEjercicio.txt";
     
     public MaquinaDeEstados()
@@ -91,14 +86,12 @@ public class MaquinaDeEstados
         try
         {
             FileWriter fw = new FileWriter(rutaDestino, true);
-            Date date = new Date();
-            fw.append("------"+dateFormat.format(date)+"------"+"\n");
             fw.append(cadenaAEscribir+"\n");
             fw.close();
         }
         catch(Exception e)
         {
-            
+            System.out.println(e.getMessage());
         }
     }
     
