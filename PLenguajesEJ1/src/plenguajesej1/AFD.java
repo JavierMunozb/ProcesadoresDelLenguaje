@@ -16,7 +16,7 @@ public class AFD
 {
     private ArrayList<Character> alfabeto;
     private ArrayList<Integer> estados;
-    private Integer estadoInicial;
+    private int estadoInicial;
     private ArrayList<Integer> estadosFinales;
     private HashMap<Integer, HashMap<Character, Integer>> matriz;
     
@@ -54,7 +54,7 @@ public class AFD
     {
        for(int i = 0; i<6; i++)
        {
-           estados.add(i);
+            getEstados().add(i);
        }
     }
     
@@ -68,9 +68,9 @@ public class AFD
     
     public void inicializarMatriz()
     {
-        for(int estado : estados)
+        for(int estado : getEstados())
         {
-            matriz.put(estado, new HashMap<>());
+            getMatriz().put(estado, new HashMap<>());
         }
     }
     
@@ -79,18 +79,18 @@ public class AFD
         /*
         *matriz.get(estado).add(caracter, estado_de_salto)
         */
-        matriz.get(0).put('a', 1);
-        matriz.get(0).put('b', 2);
-        matriz.get(1).put('b', 2);
-        matriz.get(2).put('c', 3);
-        matriz.get(3).put('d', 4);
-        matriz.get(4).put('e', 5);
-        matriz.get(5).put('d', 4);
+        getMatriz().get(0).put('a', 1);
+        getMatriz().get(0).put('b', 2);
+        getMatriz().get(1).put('b', 2);
+        getMatriz().get(2).put('c', 3);
+        getMatriz().get(3).put('d', 4);
+        getMatriz().get(4).put('e', 5);
+        getMatriz().get(5).put('d', 4);
     }
     
     public Integer getSiguienteEstado(Integer estadoActual, Character caracter)
     {
-        return matriz.get(estadoActual).get(caracter);
+        return getMatriz().get(estadoActual).get(caracter);
     }
     
     public boolean isFinal(Integer estado)
@@ -119,6 +119,20 @@ public class AFD
      */
     public ArrayList<Integer> getEstadosFinales() {
         return estadosFinales;
+    }
+
+    /**
+     * @return the estados
+     */
+    public ArrayList<Integer> getEstados() {
+        return estados;
+    }
+
+    /**
+     * @return the matriz
+     */
+    public HashMap<Integer, HashMap<Character, Integer>> getMatriz() {
+        return matriz;
     }
 
 }
