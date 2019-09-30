@@ -48,7 +48,7 @@ public class main
         }
         else if(respuestaUsuario.equals("2"))
         {
-            System.out.println(mde.generarCadena());
+            mde.generarCadena();
         }
         else
         {
