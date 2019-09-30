@@ -28,7 +28,7 @@ public class main
         if(respuestaUsuario.equals("1"))
         {
             System.out.println("Introduzca el número de cadenas a comprobar");
-            Integer numeroCadenas = input.nextInt();
+            int numeroCadenas = input.nextInt();
             for(int i = 1; i<=numeroCadenas; i++)
             {
                 System.out.println("Introduzca la cadena a comprobar");

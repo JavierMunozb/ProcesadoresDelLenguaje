@@ -97,6 +97,8 @@ public class MaquinaDeEstados
     
     public String generarCadena()
     {
+        int numeroMaximo = 100;
+        int caracteresMaximos = 10;
         String cadenaCompleta = "Todavía no está implementado c:";
         return cadenaCompleta;
     }
