@@ -21,15 +21,24 @@ public class main
         // TODO code application logic here
         MaquinaDeEstados mde = new MaquinaDeEstados();
         Scanner input = new Scanner(System.in);
-        System.out.println("Introduzca la cadena a comprobar");
-        String cadena = input.next();
-        if(mde.comprobarCadena(cadena))
+        System.out.println("¿Qué desea hacer?\n"+"1.Comprobar cadena\n"+"2.Generar cadena");
+        String respuestaUsuario = input.next();
+        if(respuestaUsuario.equals("1"))
         {
-            System.out.println("La cadena es válida");
+            System.out.println("Introduzca la cadena a comprobar");
+            String cadena = input.next();
+            if(mde.comprobarCadena(cadena))
+            {
+                System.out.println("La cadena es válida");
+            }
+            else
+            {
+                System.out.println("La cadena no es válida");
+            }
         }
-        else
+        else if(respuestaUsuario.equals("2"))
         {
-            System.out.println("La cadena no es válida");
+            
         }
     }
     
