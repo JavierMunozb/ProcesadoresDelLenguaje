@@ -5,6 +5,8 @@
  */
 package plenguajesej1;
 
+import java.io.FileWriter;
+
 /**
  *
  * @author Javier Muñoz
@@ -13,6 +15,7 @@ public class MaquinaDeEstados
 {
     private Integer estadoActual;
     private AFD automata;
+    private String rutaDestino = "C:\\Users\\PcCom\\Documents\\GitHub\\ProcesadoresDelLenguaje\\resultadoEjercicio.txt";
     
     public MaquinaDeEstados()
     {
@@ -52,9 +55,9 @@ public class MaquinaDeEstados
         {
             try
             {
-                System.out.println("Estoy comprobando "+caracter);
+                //System.out.println("Estoy comprobando "+caracter);
                 this.comprobarCaracter(caracter);
-                System.out.println("Estado tras comprobar  "+caracter+" es "+estadoActual);
+                //System.out.println("Estado tras comprobar  "+caracter+" es "+estadoActual);
             }
             catch(Exception e)
             {
@@ -68,6 +71,34 @@ public class MaquinaDeEstados
         {
             resultado = true;
         }
+        if(resultado)
+        {
+            this.escribirArchivo("La cadena "+cadena+" es válida", rutaDestino);
+        }
+        else
+        {
+            this.escribirArchivo("La cadena "+cadena+" no es válida", rutaDestino);
+        }
         return resultado;
+    }
+    
+    public void escribirArchivo(String cadenaAEscribir, String rutaDestino)
+    {
+        try
+        {
+            FileWriter fw = new FileWriter(rutaDestino, true);
+            fw.append(cadenaAEscribir+"\n");
+            fw.close();
+        }
+        catch(Exception e)
+        {
+            
+        }
+    }
+    
+    public String generarCadena()
+    {
+        String cadenaCompleta = "";
+        return cadenaCompleta;
     }
 }

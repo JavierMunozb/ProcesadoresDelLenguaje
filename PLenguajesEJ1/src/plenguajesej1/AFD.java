@@ -40,7 +40,14 @@ public class AFD
         alfabeto.add('c');
         alfabeto.add('d');
         alfabeto.add('e');
-        //alfabeto.add('f');
+      /*alfabeto.add('f');
+        alfabeto.add('m');
+        alfabeto.add('n');
+        alfabeto.add('o');
+        alfabeto.add('p');
+        alfabeto.add('q');
+        alfabeto.add('r');*/
+        
     }
     
     public void cargarEstados()
