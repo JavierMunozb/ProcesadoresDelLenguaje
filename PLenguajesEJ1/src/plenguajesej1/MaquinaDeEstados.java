@@ -97,7 +97,7 @@ public class MaquinaDeEstados
     
     public String generarCadena()
     {
-        String cadenaCompleta = "";
+        String cadenaCompleta = "Todavía no está implementado c:";
         return cadenaCompleta;
     }
 }
