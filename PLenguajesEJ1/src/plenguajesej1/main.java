@@ -24,31 +24,40 @@ public class main
         Scanner input = new Scanner(System.in);
         System.out.println("¿Qué desea hacer?\n"+"1.Comprobar cadena\n"+"2.Generar cadena");
         String respuestaUsuario = input.next();
-        ArrayList<String> arrayCadenas = new ArrayList<>();
+        ArrayList<Character> arrayCadena = new ArrayList<>();
+        ArrayList<ArrayList<Character>> cadenasGeneradas = new ArrayList<>();
         if(respuestaUsuario.equals("1"))
         {
-            System.out.println("Introduzca el número de cadenas a comprobar");
-            int numeroCadenas = input.nextInt();
-            for(int i = 1; i<=numeroCadenas; i++)
+            System.out.println("Introduzca la cadena a comprobar");
+            String entrada = input.next();
+            for(char character = 0; character<entrada.length(); character++)
             {
-                System.out.println("Introduzca la cadena a comprobar");
-                arrayCadenas.add(input.next());
+                arrayCadena.add(entrada.charAt(character));
             }
-            for(int i = 0; i<numeroCadenas; i++)
+            if(mde.comprobarCadena(arrayCadena))
             {
-                if(mde.comprobarCadena(arrayCadenas.get(i)))
-                {
-                    System.out.println("La cadena "+arrayCadenas.get(i)+" es válida");
-                }
-                else
-                {
-                    System.out.println("La cadena "+arrayCadenas.get(i)+" no es válida");
-                }
+                System.out.println("La cadena "+arrayCadena+" es válida");
+            }
+            else
+            {
+                System.out.println("La cadena "+arrayCadena+" no es válida");
             }
         }
         else if(respuestaUsuario.equals("2"))
         {
-            mde.generarCadena();
+            for(ArrayList<Character> item : mde.generarCadena())
+            {
+                cadenasGeneradas.add(item);
+            }
+            for(ArrayList<Character> item : cadenasGeneradas)
+            {
+                String cadenaFormada = new String();
+                for(char caracter : item)
+                {
+                    cadenaFormada += caracter;
+                }
+                mde.escribirArchivo(cadenaFormada, "soluciones.txt");
+            }
         }
         else
         {
