@@ -37,10 +37,12 @@ public class main
             if(mde.comprobarCadena(arrayCadena))
             {
                 System.out.println("La cadena "+arrayCadena+" es válida");
+                mde.escribirArchivo("La cadena "+arrayCadena+" es válida", "soluciones.txt");
             }
             else
             {
                 System.out.println("La cadena "+arrayCadena+" no es válida");
+                mde.escribirArchivo("La cadena "+arrayCadena+" no es válida", "soluciones.txt");
             }
         }
         else if(respuestaUsuario.equals("2"))
