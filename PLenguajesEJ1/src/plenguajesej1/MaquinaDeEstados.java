@@ -17,12 +17,12 @@ public class MaquinaDeEstados
     private int estadoActual;
     private AFD automata;
     private ArrayList<ArrayList<Character>> cadenasGeneradas;
-    private int caracteresMaximo = 20;
+    private int caracteresMaximo = 10;
     private boolean acabado = false;
     private int contadorElementos;
     private ArrayList<Character> cadena;
     private int contadorCadenas = 0;
-    private int maximoCadenas = 1000;
+    private int maximoCadenas = 200;
     private int retrocederEstados;
     private HashMap<Integer, ArrayList<Integer>> grafoEstadosValidos;
     private HashMap<Integer, HashMap<Integer, Character>> grafoLetrasValidas;
@@ -44,7 +44,7 @@ public class MaquinaDeEstados
     public void comprobarCaracter(Character caracter) throws Exception
     {
         int estadoTemp = automata.getSiguienteEstado(estadoActual, caracter);
-        if(estadoTemp!=-1)
+        if(estadoTemp!=-1||automata.getSiguienteEstado(estadoActual, caracter)!=null)
         {
             estadoActual = estadoTemp;
         }

@@ -36,13 +36,13 @@ public class main
             }
             if(mde.comprobarCadena(arrayCadena))
             {
-                System.out.println("La cadena "+arrayCadena+" es válida");
-                mde.escribirArchivo("La cadena "+arrayCadena+" es válida", "soluciones.txt");
+                System.out.println("La cadena "+arrayCadena+" es válida\n");
+                mde.escribirArchivo("La cadena "+arrayCadena+" es válida\n", "soluciones.txt");
             }
             else
             {
-                System.out.println("La cadena "+arrayCadena+" no es válida");
-                mde.escribirArchivo("La cadena "+arrayCadena+" no es válida", "soluciones.txt");
+                System.out.println("La cadena "+arrayCadena+" no es válida\n");
+                mde.escribirArchivo("La cadena "+arrayCadena+" no es válida\n", "soluciones.txt");
             }
         }
         else if(respuestaUsuario.equals("2"))

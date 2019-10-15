@@ -1,1 +1,0 @@
-La cadena [a, b, m, b, o] es válida
